@@ -15,7 +15,6 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Итерация по списку пользователей -->
     <tr th:each="car,iterStat : ${cars}" th:if="${iterStat.count <= count}">
         <td th:text="${car.getBrand()}"></td>
         <td th:text="${car.getModel()}"></td>
