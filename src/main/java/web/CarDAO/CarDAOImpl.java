@@ -16,7 +16,7 @@ public class CarDAOImpl implements CarDAO {
         cars.add(new Car("Mini", "Cooper S", 2010));
         cars.add(new Car("Land Rover", "Discovery", 2019));
     }
-    public CarDAOImpl() {}
+
 
     @Override
     public ArrayList<Car> getCars() {

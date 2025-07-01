@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 @Service
 public class CarServiceImpl implements CarService {
-    @Autowired
-    private final CarDAOImpl carDAO;
 
+    private final CarDAOImpl carDAO;
+    @Autowired
     public CarServiceImpl(CarDAOImpl carDAO) {
         this.carDAO = carDAO;
     }
