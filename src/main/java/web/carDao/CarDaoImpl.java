@@ -1,11 +1,11 @@
-package web.CarDAO;
+package web.carDao;
 
 import org.springframework.stereotype.Repository;
 import web.model.Car;
 
 import java.util.ArrayList;
 @Repository
-public class CarDAOImpl implements CarDAO {
+public class CarDaoImpl implements CarDao {
 
     private ArrayList<Car> cars = new ArrayList<>();
 

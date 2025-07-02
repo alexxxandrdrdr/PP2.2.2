@@ -15,7 +15,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="car,iterStat : ${cars}" th:if="${iterStat.count <= count}">
+    <tr th:each="car: ${cars}">
         <td th:text="${car.getBrand()}"></td>
         <td th:text="${car.getModel()}"></td>
         <td th:text="${car.getYear()}"></td>
