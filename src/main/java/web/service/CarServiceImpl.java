@@ -18,11 +18,11 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public ArrayList<Car> getCarsList(){
+    public ArrayList<Car> getCarsList() {
         return carDao.getCars();
     }
 
-    public ArrayList<Car> getCarsListByCount(String count){
+    public ArrayList<Car> getCarsListByCount(String count) {
         return carDao.getCars().stream().limit(Integer.parseInt(count)).collect(Collectors.toCollection(ArrayList::new));
     }
 }

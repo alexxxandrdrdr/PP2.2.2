@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.service.CarService;
-import java.util.stream.Collectors;
 
 
 @Controller
@@ -23,11 +22,10 @@ public class CarsController {
 
 
     @GetMapping("/cars")
-    public String printCars(@RequestParam(value = "count", required = false)String count, Model model) {
+    public String printCars(@RequestParam(value = "count", required = false) String count, Model model) {
         if (count == null || count.isEmpty()) {
             model.addAttribute("cars", carService.getCarsList());
-        }
-        else {
+        } else {
             model.addAttribute("cars", carService.getCarsListByCount(count));
         }
         return "cars/carsTable";
