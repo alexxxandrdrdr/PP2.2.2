@@ -6,4 +6,5 @@ import java.util.ArrayList;
 
 public interface CarService {
     ArrayList<Car> getCarsList();
+    ArrayList<Car> getCarsListByCount(String count);
 }

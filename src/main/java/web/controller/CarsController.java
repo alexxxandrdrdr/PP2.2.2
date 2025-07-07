@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 public class CarsController {
 
     private final CarService carService;
+
     @Autowired
     public CarsController(CarService carService) {
         this.carService = carService;
@@ -27,7 +28,7 @@ public class CarsController {
             model.addAttribute("cars", carService.getCarsList());
         }
         else {
-            model.addAttribute("cars", carService.getCarsList().stream().limit(Integer.parseInt(count)).collect(Collectors.toList()));
+            model.addAttribute("cars", carService.getCarsListByCount(count));
         }
         return "cars/carsTable";
     }
