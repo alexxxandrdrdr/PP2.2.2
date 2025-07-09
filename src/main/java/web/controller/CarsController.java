@@ -1,7 +1,5 @@
 package web.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +12,7 @@ public class CarsController {
 
     private final CarService carService;
 
-    @Autowired
+
     public CarsController(CarService carService) {
         this.carService = carService;
 
@@ -23,11 +21,7 @@ public class CarsController {
 
     @GetMapping("/cars")
     public String printCars(@RequestParam(value = "count", required = false) String count, Model model) {
-        if (count == null || count.isEmpty()) {
-            model.addAttribute("cars", carService.getCarsList());
-        } else {
-            model.addAttribute("cars", carService.getCarsListByCount(count));
-        }
+        model.addAttribute("cars", carService.getCarsListByCount(count));
         return "cars/carsTable";
     }
 

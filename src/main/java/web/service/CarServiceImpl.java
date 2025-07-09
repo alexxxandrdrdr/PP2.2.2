@@ -23,6 +23,11 @@ public class CarServiceImpl implements CarService {
     }
 
     public ArrayList<Car> getCarsListByCount(String count) {
-        return carDao.getCars().stream().limit(Integer.parseInt(count)).collect(Collectors.toCollection(ArrayList::new));
+        if (count == null || count.isEmpty()) {
+            return carDao.getCars();
+        } else {
+            return carDao.getCars().stream().limit(Integer.parseInt(count)).collect(Collectors.toCollection(ArrayList::new));
+
+        }
     }
 }
